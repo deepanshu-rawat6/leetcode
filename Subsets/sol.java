@@ -3,6 +3,9 @@ package Subsets;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Learning to generate subsets of distinct elements from Kunal Kushwaha
+ */
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> ans=subset(nums);
