@@ -1,0 +1,1 @@
+Link to the Problem : https://leetcode.com/problems/excel-sheet-column-number/
