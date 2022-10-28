@@ -1,4 +1,5 @@
 class Solution {
+    // Use Sieve of Eratosthenes
     public int countPrimes(int n) {
         boolean[] primes=new boolean[n];
         int c=0;
