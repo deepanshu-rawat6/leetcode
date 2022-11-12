@@ -1,3 +1,7 @@
+/*
+ * Time Complexity: O(m log n)
+ * Space Complexity: O(1)
+ */
 class Solution {
     public int countNegatives(int[][] grid) {
         int count = 0;
