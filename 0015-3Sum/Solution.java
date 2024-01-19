@@ -4,36 +4,31 @@
  * Using HashSet to avoid duplicate triplets
  */
 
-public static List<List<Integer>> threeSum(int[] nums) {
-    List<List<Integer>> list = new ArrayList<>();
-    Set<List<Integer>> set = new HashSet<>();
-
-    Arrays.sort(nums);
-
-    int len = nums.length;
-
-    for (int i = 0; i < len - 1; i++) {
-
-        int j = i + 1, k = len - 1;
-
-        while (j < k) {
-            int sum = nums[i] + nums[j] + nums[k];
-
-            if (sum == 0) {
-                set.add(Arrays.asList(nums[i],nums[j],nums[k]));
-                j++;
-                k--;
-            } else if (sum > 0) {
-                k--;
-            } else {
-                j++;
+ class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        int target = 0;
+        Arrays.sort(nums);
+        Set<List<Integer>> s = new HashSet<>();
+        List<List<Integer>> output = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++){
+            int j = i + 1;
+            int k = nums.length - 1;
+            while (j < k) {
+                int sum = nums[i] + nums[j] + nums[k];
+                if (sum == target) {
+                    s.add(Arrays.asList(nums[i], nums[j], nums[k]));
+                    j++;
+                    k--;
+                } else if (sum < target) {
+                    j++;
+                } else {
+                    k--;
+                }
             }
         }
+        output.addAll(s);
+        return output;
     }
-
-    list.addAll(set);
-
-    return list;
 }
 
 // Time complexity: O(n^2)
@@ -46,7 +41,8 @@ public static List<List<Integer>> threeSum(int[] nums) {
 
 // Approach: Two Pointers (Optimized)
 
-    public static List<List<Integer>> ThreeSumOptimized(int[] nums) {
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
 
         List<List<Integer>> resultList = new ArrayList<>();
@@ -87,6 +83,7 @@ public static List<List<Integer>> threeSum(int[] nums) {
 
         return resultList;
     }
+}
 
 // Time complexity: O(n^2)
 // Space complexity: O(n)

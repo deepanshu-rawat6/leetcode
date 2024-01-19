@@ -1,6 +1,11 @@
-// Solution:
+// Solution
 
-// Group the strings by their sorted values, and then return the values of the map.
+// Group the strings by their sorted values, by indexing instead of sorting strings to reduce time complexity, and then return the values of the map.
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
@@ -9,8 +14,11 @@ class Solution {
         Map<String, List<String>> map = new HashMap<>();
 
         for (String s : strs) {
-            char[] ca = s.toCharArray();
-            Arrays.sort(ca);
+
+            char[] ca = new char[26];
+            for (char c : s.toCharArray()) {
+                ca[c - 'a']++;
+            }
 
             String keyStr = String.valueOf(ca);
 
@@ -23,5 +31,5 @@ class Solution {
     }
 }
 
-// Time Complexity: O(N * KlogK)
+// Time Complexity: O(N * K)
 // Space Complexity: O(N * K)

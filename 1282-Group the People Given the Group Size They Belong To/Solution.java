@@ -2,6 +2,11 @@
 
 // Group the people to the indexes and then filter into the arralist of the group size, and if group size is greater than 3, then separate into the groups of 3 and add to the list
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 class Solution {
     public List<List<Integer>> groupThePeople(int[] groupSizes) {
         Map<Integer, ArrayList<Integer>> map = new HashMap<>();

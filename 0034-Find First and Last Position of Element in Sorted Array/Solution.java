@@ -11,7 +11,7 @@ class Solution {
         int ans = -1;
         int l = 0;
         int u = nums.length-1;
-        while(l < =u){
+        while(l <= u){
             int mid = l + (u - l) / 2;
             if(target < nums[mid]){
                 u = mid - 1;
